@@ -2,6 +2,10 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
+import './config/env.js'; // validated eagerly so the process fails fast if misconfigured
+import { authRouter } from './auth/auth.router.js';
+import { usersRouter } from './users/users.router.js';
+import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
 
@@ -31,6 +35,9 @@ app.get("/health", (_req, res) => {
   });
 });
 
-//mount routers and error handler catch-all 
+app.use("/api/auth", authRouter);
+app.use("/api/users", usersRouter);
+
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));

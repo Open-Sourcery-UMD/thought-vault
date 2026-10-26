@@ -28,3 +28,6 @@
 
 # Build
 **/build/
+
+# Generated Prisma client (regenerated via `npx prisma generate`)
+backend/src/generated/
