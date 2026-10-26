@@ -28,3 +28,6 @@
 
 # Build
 **/build/
+
+
+/src/generated/prisma
