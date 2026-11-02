@@ -28,6 +28,11 @@ services:
       DATABASE_URL: postgresql://thought_vault:thought_vault_dev@postgres:5432/thought_vault
       ML_SERVICE_URL: http://ml-service:8000
 
+    command: >
+      sh -c "npx prisma generate &&
+             npx prisma migrate deploy &&
+             npm run dev"
+
     ports:
       - "3000:3000"
 
