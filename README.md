@@ -47,6 +47,10 @@ thought-vault/
 
 Database schema and migrations will be maintained through the backend rather than a separate application directory.
 
+The [initial database schema proposal](docs/database-schema-proposal.md) describes
+the proposed MVP models, constraints, embedding storage, and decisions to review
+before implementing persistence. It does not change the active database schema.
+
 ## Architecture
 
 ```text
